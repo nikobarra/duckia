@@ -527,7 +527,8 @@ a { color: inherit; }
   .servicios__grid { grid-template-columns: repeat(2, 1fr); }
   .servicio-card--wide { grid-column: span 2; }
   .fundador__grid { grid-template-columns: 1fr; }
-  .fundador__photo-wrap { max-width: min(300px, 62vw); margin: 0 auto; }
+  .fundador__photo-wrap { max-width: min(240px, 52vw); margin: 0 auto; }
+  .fundador__photo { aspect-ratio: 4 / 3; }
   .proceso__timeline { grid-template-columns: 1fr; gap: 2.75rem; }
   .proceso__step-head::after { display: none; }
 }
