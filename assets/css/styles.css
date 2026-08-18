@@ -527,8 +527,9 @@ a { color: inherit; }
   .servicios__grid { grid-template-columns: repeat(2, 1fr); }
   .servicio-card--wide { grid-column: span 2; }
   .fundador__grid { grid-template-columns: 1fr; }
-  .fundador__photo-wrap { max-width: min(240px, 52vw); margin: 0 auto; }
-  .fundador__photo { aspect-ratio: 4 / 3; }
+  .fundador__photo-wrap { max-width: none; width: max-content; margin: 0 auto; }
+  .fundador__photo { width: auto; height: 90px; aspect-ratio: 4 / 3; }
+  .fundador__photo-fold { border-bottom-width: 16px; border-left-width: 16px; }
   .proceso__timeline { grid-template-columns: 1fr; gap: 2.75rem; }
   .proceso__step-head::after { display: none; }
 }
