@@ -35,7 +35,8 @@ Retomo el lanzamiento de la marca **DuckIA**. Ya tenemos el plan de lanzamiento 
 ## Próximo paso pedido
 
 Checklist de pre-lanzamiento (sección 02 del PDF) completo. Semana de lanzamiento (sección 03) **ya programada** en Zernio sobre @duckia_latam (ver tabla abajo). Lo único que queda:
-- Landing en www.duckia.com.ar — el usuario la está armando en paralelo en otra sesión/ventana, no requiere trabajo acá salvo que lo pida explícitamente
+- [x] Landing en www.duckia.com.ar — desplegada y funcionando (armada por el usuario en otra sesión)
+- [x] Link de la bio de @duckia_latam actualizado manualmente a la landing
 - Responder comentarios y DMs a medida que lleguen (manual, toda la semana de lanzamiento)
 - Pieza 4 (mitos IA), 5 (beneficios IA) y 6 (presencia web) quedaron en el banco sin programar — son contenido extra para semanas siguientes
 
