@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-18T21:20:00.000Z",
+  "title": "Design System: DuckIA — Landing",
+  "extensions": {
+    "colorMeta": {
+      "bg": { "role": "neutral", "displayName": "Negro campo", "canonical": "#08080a" },
+      "bg-raised": { "role": "neutral", "displayName": "Negro elevado", "canonical": "#131313" },
+      "bg-raised-2": { "role": "neutral", "displayName": "Negro elevado (2)", "canonical": "#1a1a1a" },
+      "gold": { "role": "primary", "displayName": "Dorado de marca", "canonical": "#d9b06a" },
+      "gold-bright": { "role": "primary", "displayName": "Dorado brillante", "canonical": "#f0c987" },
+      "gold-deep": { "role": "primary", "displayName": "Dorado profundo", "canonical": "#8a6a2e" },
+      "gold-dim": { "role": "primary", "displayName": "Dorado sombra", "canonical": "#4a3717" },
+      "silver": { "role": "secondary", "displayName": "Plata", "canonical": "#b7bac0" },
+      "silver-dim": { "role": "secondary", "displayName": "Plata atenuada", "canonical": "#6b6e73" },
+      "ink": { "role": "neutral", "displayName": "Marfil tinta", "canonical": "#f6f4ee" },
+      "ink-dim": { "role": "neutral", "displayName": "Marfil atenuado", "canonical": "rgba(246, 244, 238, 0.66)" },
+      "ink-faint": { "role": "neutral", "displayName": "Marfil tenue", "canonical": "rgba(246, 244, 238, 0.38)" }
+    },
+    "typographyMeta": {
+      "hero-display": { "displayName": "Hero display", "purpose": "Título del hero únicamente, la escala más grande del sistema." },
+      "display": { "displayName": "Display", "purpose": "Títulos de sección." },
+      "body": { "displayName": "Body", "purpose": "Párrafos y descripciones." },
+      "label": { "displayName": "Label / mono", "purpose": "Kickers de sección, firma del fundador, handle de Instagram." }
+    },
+    "shadows": [
+      { "name": "cta-hover-glow", "value": "0 10px 30px -8px rgba(217, 176, 106, 0.55)", "purpose": "Único uso de sombra del sistema, exclusivo del hover/focus de los CTAs." }
+    ],
+    "motion": [
+      { "name": "ease-fold", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "Easing por defecto para hovers, reveals y el drift del copy del hero." },
+      { "name": "hero-scrub", "value": "scroll-linked, sin easing (1:1 con scrollY)", "purpose": "El video del pliegue sincroniza currentTime directamente con el progreso de scroll dentro de la sección fijada del hero." },
+      { "name": "hero-content-drift", "value": "smoothstep, completa a progress=0.6", "purpose": "El copy del hero se desliza hacia arriba y se desvanece durante el primer 60% del recorrido del hero." },
+      { "name": "reveal-on-scroll", "value": "translateY(22px)->0, opacity 0->1, 0.7s ease-fold, vía IntersectionObserver", "purpose": "Entrada de secciones fuera del hero." }
+    ],
+    "breakpoints": [
+      { "name": "tablet", "value": "880px" },
+      { "name": "mobile", "value": "640px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "CTA primario",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Botón de WhatsApp, único tipo de acción del sistema (hero y contacto).",
+      "html": "<a class=\"ds-cta\" href=\"#\"><span>Escribime por WhatsApp</span><svg class=\"ds-cta__icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 20l1.4-4.2A8 8 0 1 1 9 18.4Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/></svg></a>",
+      "css": ".ds-cta { display: inline-flex; align-items: center; gap: 0.7em; font-family: 'Hanken Grotesk', sans-serif; font-weight: 600; font-size: 1rem; color: #f6f4ee; text-decoration: none; padding: 0.95em 1.7em; border-radius: 999px; border: 1.5px solid #d9b06a; background: rgba(217, 176, 106, 0.06); transition: background 0.25s cubic-bezier(0.22,1,0.36,1), transform 0.25s cubic-bezier(0.22,1,0.36,1), box-shadow 0.25s cubic-bezier(0.22,1,0.36,1); } .ds-cta__icon { width: 1.1em; height: 1.1em; } .ds-cta:hover, .ds-cta:focus-visible { background: #d9b06a; color: #0c0a06; transform: translateY(-2px); box-shadow: 0 10px 30px -8px rgba(217, 176, 106, 0.55); }"
+    },
+    {
+      "name": "Card de servicio",
+      "kind": "card",
+      "refersTo": "servicio-card",
+      "description": "Panel de la grilla de servicios, con fold triangular dorado en la esquina superior derecha.",
+      "html": "<div class=\"ds-card\"><span class=\"ds-card__fold\" aria-hidden=\"true\"></span><h3>Título del servicio</h3><p>Descripción breve del servicio.</p></div>",
+      "css": ".ds-card { position: relative; background: #131313; padding: 2.4rem 1.9rem 2.6rem; overflow: hidden; } .ds-card__fold { position: absolute; top: 0; right: 0; width: 0; height: 0; border-top: 34px solid #4a3717; border-left: 34px solid transparent; transition: border-top-color 0.3s cubic-bezier(0.22,1,0.36,1); } .ds-card:hover .ds-card__fold { border-top-color: #d9b06a; } .ds-card h3 { font-family: 'Unbounded', sans-serif; font-weight: 500; font-size: 1.08rem; line-height: 1.3; margin: 0 0 0.9rem; padding-right: 1.5rem; color: #f6f4ee; } .ds-card p { margin: 0; color: rgba(246,244,238,0.66); font-size: 0.95rem; line-height: 1.55; }"
+    },
+    {
+      "name": "Insignia de paso (proceso)",
+      "kind": "custom",
+      "refersTo": "proceso-num",
+      "description": "Numeral de paso del proceso, pentágono dorado en vez de círculo, con conector punteado que nace pegado a la insignia.",
+      "html": "<div class=\"ds-step-head\"><span class=\"ds-step-num\">1</span></div>",
+      "css": ".ds-step-head { display: flex; align-items: center; margin-bottom: 1.4rem; } .ds-step-head::after { content: ''; flex: 1 1 auto; height: 1px; margin-left: 1rem; background: repeating-linear-gradient(90deg, #d9b06a 0 10px, transparent 10px 16px); opacity: 0.6; } .ds-step-num { display: inline-flex; align-items: center; justify-content: center; width: 2.1rem; height: 2.1rem; flex: none; font-family: 'Martian Mono', monospace; font-size: 0.85rem; color: #0c0a06; background: #d9b06a; clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "El pliegue en escena",
+    "overview": "DuckIA es una agencia que traduce IA y presencia web a un lenguaje que un dueño de pyme o un emprendedor puede entender sin sentirse de afuera. El sistema visual no ilustra esa idea con un ícono: la lleva literalmente al mecanismo de la página. El logo de DuckIA ya es una lámina de papel dorado plegándose hasta convertirse en un pato origami; ese pliegue es el mundo entero, no solo el hero. Todo lo demás (cards, insignias, marcos de foto, líneas conectoras) habla en facetas y ángulos duros, nunca en esquinas redondeadas ni sombras difusas de card de SaaS genérico. Es un sistema restringido a propósito: negro casi puro como campo, dorado metálico como único acento con permiso para dominar, plata/gunmetal como voz secundaria tomada del cuerpo del pato del logo.",
+    "keyCharacteristics": [
+      "El pliegue dorado del logo, no un ícono derivado, es la fuente de toda la geometría.",
+      "Negro + dorado + plata es la paleta completa; no hay colores semánticos adicionales.",
+      "Tipografía de display angulosa (Unbounded) en vez de las opciones manidas de IA.",
+      "El scroll controla el mecanismo de marca directamente (scroll-scrubbing del video del pliegue)."
+    ],
+    "rules": [
+      { "name": "La regla del acento único", "body": "El dorado es el único color con permiso para dominar un área grande. Todo lo demás vive en negro, marfil o plata.", "section": "colors" },
+      { "name": "La regla del display angular", "body": "El display nunca usa un peso liviano ni cursiva; el corte anguloso de Unbounded es parte del lenguaje de facetas.", "section": "typography" },
+      { "name": "La regla del plano en reposo", "body": "Ninguna superficie tiene sombra por defecto. La sombra aparece solo como respuesta a hover/focus de CTA.", "section": "elevation" },
+      { "name": "La regla del corte, no la curva", "body": "Ninguna superficie usa border-radius salvo los CTAs. Todo lo demás se resuelve con clip-path o bordes triangulares.", "section": "shapes" }
+    ],
+    "dos": [
+      "Do usar clip-path o bordes triangulares para cualquier corte o marco nuevo.",
+      "Do mantener el dorado como único acento de color.",
+      "Do anclar cualquier línea conectora al elemento real que conecta, nunca por fracciones de porcentaje.",
+      "Do aplicar el filtro #duotone-gold a cualquier fotografía real que se sume al sistema.",
+      "Do cargar solo el asset de video/imagen que corresponde al viewport real."
+    ],
+    "donts": [
+      "Don't usar border-radius en ningún elemento salvo los CTAs.",
+      "Don't agregar sombras decorativas en reposo.",
+      "Don't usar Space Grotesk, Space Mono, Playfair Display, Fraunces ni el resto de fuentes por defecto de IA.",
+      "Don't mostrar fotografías reales a color pleno o en escala de grises neutra.",
+      "Don't inventar testimonios, casos de éxito o precios."
+    ]
+  }
+}

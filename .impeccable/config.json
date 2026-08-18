@@ -1,0 +1,36 @@
+{
+  "buildPath": "comp",
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "assets/css/styles.css"
+        ],
+        "createdAt": "2026-08-18T20:43:24.399Z",
+        "reason": "false positive: .facet-tag::before is a 0x0 border-triangle chevron glyph before a kicker label (border-left solid + top/bottom transparent, classic CSS triangle hack), not a card side-accent stripe"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "*",
+        "files": [
+          "assets/css/styles.css"
+        ],
+        "createdAt": "2026-08-18T21:30:29.023Z",
+        "reason": "legitimate one-offs: #fff is required by .wordmark's mix-blend-mode:difference (needs true white to invert correctly against arbitrary video content, --ink's off-white would not); rgba(4,4,3,x) family are the hero scrim gradient stops (directional darkening over the video, same near-black base at several alphas, not a page background)"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "*",
+        "files": [
+          "assets/css/styles.css"
+        ],
+        "createdAt": "2026-08-18T21:30:29.159Z",
+        "reason": "the real type ramp is intentionally more granular than DESIGN.md's 4 representative frontmatter tokens (hero-display/display/body/label); the full set of steps (0.78-2rem across labels, body, component titles, quotes, CTA) is documented in prose under DESIGN.md's Typography > Hierarchy section"
+      }
+    ]
+  }
+}
