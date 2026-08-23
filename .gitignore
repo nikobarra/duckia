@@ -1,28 +1,12 @@
-# AI tool scaffolding (per-tool config, not project content)
-.claude/
-.agent/
-.agents/
-.codex/
-.cursor/
-.gemini/
-.hermes/
-.kiro/
-.opencode/
-.pi/
-.qoder/
-.tmp.driveupload/
+# Este repo versiona UNICAMENTE los datos de la landing de DuckIA (lo que
+# Vercel efectivamente sirve): index.html, assets/, README y este archivo.
+# Todo el resto del directorio de trabajo (planificacion, contenido de
+# Instagram, manual de marca, scripts de otras sesiones, scratch de
+# herramientas, etc.) vive local en disco pero no se vincula al repositorio.
+/*
 
-# Impeccable internal working files (decision comps, debug scratch)
-.impeccable/mocks/
-.impeccable/preview_*.jpg
-.impeccable/check_last_frame*.jpg
-.impeccable/surface-brief-landing.md
-
-# Raw/duplicate source assets superseded by assets/ (kept locally, not needed for deploy)
-video_16_9.mp4
-video_9_16.mp4
-logo_movimiento_pt1.mp4
-logo_movimiento_pt2.mp4
-foto_fundador_original.jpg
-foto_fundador_duckia.jpg
-foto_fundador_duckia_v2.jpg
+!/.gitignore
+!/README.md
+!/index.html
+!/assets/
+!/assets/**
