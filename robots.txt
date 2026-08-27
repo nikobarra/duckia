@@ -1,4 +1,16 @@
+# Content Signals (contentsignals.org) — declaración de preferencias de uso.
+# Es una preferencia, no un candado: la respetan los rastreadores que se portan
+# bien y la ignoran los demás.
+#
+#   search=yes    aparecer en buscadores
+#   ai-input=yes  que una IA pueda levantar la página para responder y CITARNOS.
+#                 Va en "yes" a propósito: es el canal por el que un cliente nos
+#                 puede encontrar preguntándole a un asistente. Ponerlo en "no"
+#                 sería cerrarnos justo la puerta que estamos tratando de abrir.
+#   ai-train=no   no cedemos el contenido para entrenar modelos: no nos devuelve
+#                 nada a cambio.
 User-agent: *
+Content-Signal: ai-train=no, search=yes, ai-input=yes
 Allow: /
 
 Sitemap: https://www.duckia.com.ar/sitemap.xml
