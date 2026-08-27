@@ -10,3 +10,6 @@
 !/index.html
 !/assets/
 !/assets/**
+# Los sirve Vercel en la raíz del dominio y Search Console los busca ahí.
+!/robots.txt
+!/sitemap.xml
