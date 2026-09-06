@@ -13,3 +13,14 @@
 # Los sirve Vercel en la raíz del dominio y Search Console los busca ahí.
 !/robots.txt
 !/sitemap.xml
+
+# La landing del libro, servida en duckia.com.ar/ebook. Misma lógica de lista
+# blanca que la raíz: se habilita la carpeta, se vuelve a ignorar todo lo de
+# adentro y después se listan los archivos que Vercel tiene que servir. El
+# material de trabajo (el PDF del adelanto, los carruseles, el handoff de
+# diseño) vive ahí al lado pero no se publica.
+!/ebook/
+/ebook/*
+!/ebook/index.html
+!/ebook/assets/
+!/ebook/assets/**
