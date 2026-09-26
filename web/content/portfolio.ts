@@ -34,39 +34,38 @@ export const REELS: Reel[] = [
 
 export type Canal = {
   id: string;
-  red: string;
+  etiqueta: string;
   handle: string;
-  href: string;
   texto: string;
+  links: { red: string; href: string }[];
 };
 
 export const CANALES: Canal[] = [
   {
-    id: "duckia-ig",
-    red: "Instagram",
+    id: "duckia",
+    etiqueta: "DuckIA",
     handle: "@duckia_latam",
-    href: SOCIAL.instagram,
-    texto: "Todos los reels de DuckIA.",
-  },
-  {
-    id: "duckia-tt",
-    red: "TikTok",
-    handle: "@duckia_latam",
-    href: SOCIAL.tiktok,
-    texto: "Reels y carruseles diarios, de lunes a sábado.",
+    texto: "Todos los reels de DuckIA, y en TikTok carruseles de lunes a sábado.",
+    links: [
+      { red: "Instagram", href: SOCIAL.instagram },
+      { red: "TikTok", href: SOCIAL.tiktok },
+    ],
   },
   {
     id: "melisa",
-    red: "Instagram · clienta",
+    etiqueta: "Clienta",
     handle: "@melisa_santoianni",
-    href: "https://instagram.com/melisa_santoianni",
     texto: "La cuenta de una clienta de DuckIA.",
+    links: [
+      { red: "Instagram", href: "https://instagram.com/melisa_santoianni" },
+      { red: "TikTok", href: "https://tiktok.com/@melisa_santoianni" },
+    ],
   },
   {
     id: "youtube",
-    red: "YouTube",
+    etiqueta: "YouTube",
     handle: "@Ai_Beats1979",
-    href: SOCIAL.youtube,
     texto: "Trabajos más largos.",
+    links: [{ red: "YouTube", href: SOCIAL.youtube }],
   },
 ];
