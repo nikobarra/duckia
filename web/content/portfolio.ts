@@ -63,9 +63,12 @@ export const CANALES: Canal[] = [
   },
   {
     id: "youtube",
-    etiqueta: "YouTube",
+    etiqueta: "Cuentas que administro",
     handle: "@Ai_Beats1979",
-    texto: "Trabajos más largos.",
-    links: [{ red: "YouTube", href: SOCIAL.youtube }],
+    texto: "Las gestiono y creo su contenido. En YouTube, los trabajos más largos.",
+    links: [
+      { red: "YouTube", href: SOCIAL.youtube },
+      { red: "TikTok", href: "https://tiktok.com/@ia_beats79" },
+    ],
   },
 ];
