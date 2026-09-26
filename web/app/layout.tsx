@@ -20,7 +20,15 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_AR",
     siteName: "DuckIA",
-    images: [{ url: "/img/og-duckia.jpg", width: 1200, height: 630 }],
+    images: [
+      {
+        url: "/img/og-duckia.jpg",
+        width: 1200,
+        height: 630,
+        type: "image/jpeg",
+        alt: "DuckIA: contenido, video y web para negocios",
+      },
+    ],
   },
   twitter: { card: "summary_large_image" },
   alternates: { canonical: "/" },
