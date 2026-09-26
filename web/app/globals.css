@@ -1,0 +1,126 @@
+@import "tailwindcss" source(none);
+@source "./**/*.{ts,tsx}";
+@source "../components/**/*.{ts,tsx}";
+@source "../content/**/*.ts";
+
+@theme {
+  --color-bg: #08080a;
+  --color-raised: #131313;
+  --color-raised-2: #1a1a1a;
+  --color-gold: #d9b06a;
+  --color-gold-bright: #f0c987;
+  --color-gold-deep: #8a6a2e;
+  --color-gold-dim: #4a3717;
+  --color-silver: #b7bac0;
+  --color-silver-dim: #6b6e73;
+  --color-ink: #f6f4ee;
+  --color-ink-dim: rgba(246, 244, 238, 0.66);
+  --color-ink-faint: rgba(246, 244, 238, 0.38);
+  --color-line: rgba(217, 176, 106, 0.16);
+
+  --font-display: var(--font-unbounded), "Segoe UI", sans-serif;
+  --font-sans: var(--font-hanken), "Segoe UI", sans-serif;
+  --font-mono: var(--font-martian), Consolas, monospace;
+
+  --ease-fold: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  background: var(--color-bg);
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-gold);
+  color: #0c0a06;
+}
+
+.container-site {
+  width: min(1180px, 100% - 3rem);
+  margin-inline: auto;
+}
+
+.kicker {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.kicker::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 6px solid var(--color-gold);
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+}
+
+.fold-card {
+  position: relative;
+}
+
+.fold-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-top: 34px solid var(--color-gold-dim);
+  border-left: 34px solid transparent;
+  transition: border-color 0.3s var(--ease-fold);
+}
+
+.fold-card:hover::after {
+  border-top-color: var(--color-gold-bright);
+}
+
+.cut-corner {
+  clip-path: polygon(0 0, 100% 0, 100% 88%, 88% 100%, 0 100%);
+}
+
+.duotone {
+  filter: url(#duotone-gold);
+}
+
+.marquee-track {
+  animation: marquee 38s linear infinite;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}

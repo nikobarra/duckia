@@ -24,3 +24,7 @@
 !/ebook/index.html
 !/ebook/assets/
 !/ebook/assets/**
+
+# El sitio nuevo en Next.js. Vercel lo buildea con Root Directory = web.
+# web/.gitignore excluye node_modules, .next y los .env locales.
+!/web/
