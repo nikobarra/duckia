@@ -56,8 +56,8 @@ export const CAPITULOS: Capitulo[] = [
     cuando: "Mataderos · 6 años",
     titulo: "Tatuajes, remeras y discos",
     texto: [
-      "Emprendí con un estudio de tatuajes que me abrió la puerta al merchandising: estampaba remeras con serigrafía para bandas de rock under de Mataderos y del conurbano.",
-      "También tuve una pequeña discográfica que producía CDs para ese mismo ambiente.",
+      "Abrí Motoralmaisangre Tattoo, un estudio de tatuajes que me abrió la puerta al merchandising: estampaba remeras con serigrafía para bandas de rock under de Mataderos y del conurbano.",
+      "El estudio pasó a llamarse Motoralmaisangre Tattoo y Merchandising, y sumó una pequeña discográfica que producía CDs para ese mismo ambiente.",
     ],
   },
   {
