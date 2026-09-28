@@ -32,12 +32,15 @@ export const REELS: Reel[] = [
   },
 ];
 
+type Link = { red: string; href: string };
+
 export type Canal = {
   id: string;
   etiqueta: string;
   handle: string;
   texto: string;
-  links: { red: string; href: string }[];
+  links: Link[];
+  cuentas?: { nombre: string; links: Link[] }[];
 };
 
 export const CANALES: Canal[] = [
@@ -63,13 +66,27 @@ export const CANALES: Canal[] = [
     ],
   },
   {
-    id: "youtube",
+    id: "administradas",
     etiqueta: "Cuentas que administro",
-    handle: "@Ai_Beats1979",
-    texto: "Las gestiono y creo su contenido. En YouTube, los trabajos más largos.",
-    links: [
-      { red: "YouTube", href: SOCIAL.youtube },
-      { red: "TikTok", href: "https://tiktok.com/@ia_beats79" },
+    handle: "Tres proyectos",
+    texto: "Las gestiono y creo todo su contenido. En YouTube, los trabajos más largos.",
+    links: [],
+    cuentas: [
+      {
+        nombre: "AI Beats",
+        links: [
+          { red: "YouTube", href: SOCIAL.youtube },
+          { red: "TikTok", href: "https://tiktok.com/@ia_beats79" },
+        ],
+      },
+      {
+        nombre: "Impulso Diario",
+        links: [{ red: "Facebook", href: "https://www.facebook.com/profile.php?id=61594072589173" }],
+      },
+      {
+        nombre: "Compila y Sonríe",
+        links: [{ red: "TikTok", href: "https://tiktok.com/@compilaysonrie" }],
+      },
     ],
   },
 ];
