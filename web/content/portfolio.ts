@@ -55,10 +55,11 @@ export const CANALES: Canal[] = [
     id: "melisa",
     etiqueta: "Clienta",
     handle: "@melisa_santoianni",
-    texto: "La cuenta de una clienta de DuckIA.",
+    texto: "Clienta de DuckIA: sus reels y la landing de su paquete completo de servicios.",
     links: [
       { red: "Instagram", href: "https://instagram.com/melisa_santoianni" },
       { red: "TikTok", href: "https://tiktok.com/@melisa_santoianni" },
+      { red: "Landing", href: "https://www.melisantoianni.com/" },
     ],
   },
   {
