@@ -122,7 +122,7 @@ export function HeroFold() {
           </h1>
           <p className="mt-6 max-w-[46ch] text-ink-dim sm:text-lg">
             Grabo, edito y publico el contenido de tu negocio, y te armo la web para que te
-            encuentren. Te atiendo yo, como en el mostrador.
+            encuentren. Tenés una idea, yo hago que funcione.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button href={WHATSAPP_DEFAULT}>Escribime por WhatsApp</Button>
