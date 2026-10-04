@@ -67,9 +67,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <filter id="duotone-gold" colorInterpolationFilters="sRGB">
             <feColorMatrix type="matrix" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0" />
             <feComponentTransfer>
-              <feFuncR type="table" tableValues="0.031 0.851" />
-              <feFuncG type="table" tableValues="0.031 0.690" />
-              <feFuncB type="table" tableValues="0.039 0.416" />
+              <feFuncR type="table" tableValues="0.031 1.000" />
+              <feFuncG type="table" tableValues="0.031 0.824" />
+              <feFuncB type="table" tableValues="0.039 0.122" />
             </feComponentTransfer>
           </filter>
         </svg>

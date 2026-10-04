@@ -31,7 +31,7 @@ export function Header() {
     >
       <div className="container-site flex h-16 items-center justify-between gap-6">
         <Link href="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
-          <Image src="/img/duckia-mark.png" alt="" width={28} height={28} priority />
+          <Image src="/img/duckia-mark.svg" alt="" width={28} height={28} priority unoptimized />
           <span className="font-display text-[1.08rem] font-semibold tracking-tight">DuckIA</span>
         </Link>
 

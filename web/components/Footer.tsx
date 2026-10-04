@@ -8,7 +8,7 @@ export function Footer() {
       <div className="container-site grid gap-12 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div>
           <Link href="/" className="flex items-center gap-2.5">
-            <Image src="/img/duckia-mark.png" alt="" width={32} height={32} />
+            <Image src="/img/duckia-mark.svg" alt="" width={32} height={32} unoptimized />
             <span className="font-display text-lg font-semibold">DuckIA</span>
           </Link>
           <p className="mt-4 max-w-[32ch] text-sm text-ink-dim">
