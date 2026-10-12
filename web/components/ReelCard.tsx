@@ -54,6 +54,15 @@ export function ReelCard({ reel }: { reel: Reel }) {
       <figcaption className="mt-4">
         <p className="font-display text-[1.08rem] font-semibold">{reel.titulo}</p>
         <p className="mt-1 text-sm text-ink-dim">{reel.bajada}</p>
+        {reel.tratamiento.length > 0 && (
+          <ul className="mt-3 flex flex-wrap gap-1.5" aria-label="Tratamiento de edición">
+            {reel.tratamiento.map((t) => (
+              <li key={t} className="border border-line px-2 py-0.5 font-mono text-[0.68rem] uppercase tracking-[0.08em] text-ink-dim">
+                {t}
+              </li>
+            ))}
+          </ul>
+        )}
       </figcaption>
     </figure>
   );

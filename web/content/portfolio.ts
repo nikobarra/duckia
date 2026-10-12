@@ -6,15 +6,26 @@ export type Reel = {
   bajada: string;
   src: string;
   poster: string;
+  /** Qué se le hizo en la edición (se muestra como etiquetas en la tarjeta). */
+  tratamiento: string[];
 };
 
 export const REELS: Reel[] = [
+  {
+    id: "elektra",
+    titulo: "Elektra Urbano · Día de la Madre",
+    bajada: "Reel para un local de ropa deportiva de Balcarce.",
+    src: "/videos/elektra.mp4",
+    poster: "/videos/elektra.jpg",
+    tratamiento: ["Color", "Limpieza de ruido", "Nivelación de audio", "Subtítulos", "Zooms de énfasis", "SFX", "Placa final de marca", "Bloopers"],
+  },
   {
     id: "kiosco",
     titulo: "El kiosco",
     bajada: "La historia del kiosco, hablada a cámara.",
     src: "/videos/kiosco.mp4",
     poster: "/videos/kiosco.jpg",
+    tratamiento: ["Sonido limpio", "Música", "SFX"],
   },
   {
     id: "pato",
@@ -22,6 +33,7 @@ export const REELS: Reel[] = [
     bajada: "De dónde sale el nombre DuckIA.",
     src: "/videos/pato.mp4",
     poster: "/videos/pato.jpg",
+    tratamiento: ["Color, luces y sombras", "Sonido limpio", "Música", "SFX", "Subtítulos, motion e IA"],
   },
   {
     id: "conteo",
@@ -29,6 +41,7 @@ export const REELS: Reel[] = [
     bajada: "Investigación en la calle, local por local.",
     src: "/videos/conteo-mardel.mp4",
     poster: "/videos/conteo-mardel.jpg",
+    tratamiento: ["Color, luces y sombras", "Sonido limpio", "Música", "SFX", "Contador animado"],
   },
 ];
 
