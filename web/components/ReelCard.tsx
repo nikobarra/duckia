@@ -57,7 +57,7 @@ export function ReelCard({ reel }: { reel: Reel }) {
         {reel.tratamiento.length > 0 && (
           <ul className="mt-3 flex flex-wrap gap-1.5" aria-label="Tratamiento de edición">
             {reel.tratamiento.map((t) => (
-              <li key={t} className="border border-line px-2 py-0.5 font-mono text-[0.68rem] uppercase tracking-[0.08em] text-ink-dim">
+              <li key={t} className="border border-line px-2 py-0.5 font-mono text-[0.72rem] uppercase tracking-[0.08em] text-ink-dim">
                 {t}
               </li>
             ))}
