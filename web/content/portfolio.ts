@@ -98,6 +98,13 @@ export const CANALES: Canal[] = [
     ],
   },
   {
+    id: "maxikiosco",
+    etiqueta: "Cliente",
+    handle: "@maxikiosco_la_21",
+    texto: "Maxikiosco La 21: la dueña graba con el celular y yo edito sus reels.",
+    links: [{ red: "TikTok", href: "https://www.tiktok.com/@maxikiosco_la_21" }],
+  },
+  {
     id: "administradas",
     etiqueta: "Cuentas que administro",
     handle: "Tres proyectos",

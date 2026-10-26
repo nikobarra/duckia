@@ -42,7 +42,7 @@ export default function PortfolioPage() {
       <section className="border-t border-line py-24 sm:py-32">
         <div className="container-site">
           <SectionHead kicker="Más trabajos" title="Seguí viendo en las cuentas" />
-          <div className="mt-14 grid gap-px border border-line bg-line md:grid-cols-3">
+          <div className="mt-14 grid gap-px border border-line bg-line md:grid-cols-2">
             {CANALES.map((c, i) => (
               <Reveal key={c.id} delay={i * 0.05}>
                 <ChannelCard canal={c} />
