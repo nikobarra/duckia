@@ -23,14 +23,14 @@ export default function PortfolioPage() {
             Mirá lo que <span className="text-gold">hago</span>.
           </h1>
           <p className="mt-6 max-w-[48ch] text-ink-dim sm:text-lg">
-            Cinco videos para darte una idea, con lo que se le hizo a cada uno en la edición. El resto vive en las cuentas, que se actualizan todas
+            Seis videos para darte una idea, con lo que se le hizo a cada uno en la edición. El resto vive en las cuentas, que se actualizan todas
             las semanas.
           </p>
         </Reveal>
       </section>
 
       <section className="container-site pb-24">
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
           {REELS.map((r, i) => (
             <Reveal key={r.id} delay={i * 0.08}>
               <ReelCard reel={r} />

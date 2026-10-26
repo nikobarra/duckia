@@ -10,6 +10,9 @@ export type Reel = {
   tratamiento: string[];
 };
 
+/** Lo mismo en los reels del Maxikiosco: grabados con el celular y mandados por WhatsApp. */
+const MAXIKIOSCO = ["Cortes", "Reescalado con IA", "Gráficos de Halloween", "Marca animada", "Subtítulos", "Zooms de énfasis", "Color", "Música con IA", "SFX", "Limpieza de ruido"];
+
 export const REELS: Reel[] = [
   {
     id: "elektra",
@@ -22,10 +25,10 @@ export const REELS: Reel[] = [
   {
     id: "maxikiosco-ositos",
     titulo: "Maxikiosco La 21 · Halloween",
-    bajada: "Lo graba la dueña con el celular y yo lo edito.",
+    bajada: "Lo graba la dueña con el celular y me lo manda por WhatsApp. Yo lo edito.",
     src: "/videos/maxikiosco-ositos.mp4",
     poster: "/videos/maxikiosco-ositos.jpg",
-    tratamiento: ["Títulos animados", "Subtítulos", "Gráficos de Halloween", "Placa final de marca"],
+    tratamiento: MAXIKIOSCO,
   },
   {
     id: "kiosco",
@@ -50,6 +53,14 @@ export const REELS: Reel[] = [
     src: "/videos/conteo-mardel.mp4",
     poster: "/videos/conteo-mardel.jpg",
     tratamiento: ["Color, luces y sombras", "Sonido limpio", "Música", "SFX", "Contador animado"],
+  },
+  {
+    id: "maxikiosco-halloween",
+    titulo: "Maxikiosco La 21 · Todo lo de Halloween",
+    bajada: "Recorrida por el local, producto por producto.",
+    src: "/videos/maxikiosco-halloween.mp4",
+    poster: "/videos/maxikiosco-halloween.jpg",
+    tratamiento: MAXIKIOSCO,
   },
 ];
 
