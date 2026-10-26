@@ -56,7 +56,7 @@ export default function Home() {
         <div className="container-site">
           <SectionHead kicker="Portfolio" title="Videos hechos por DuckIA" />
           <div className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-            {REELS.map((r, i) => (
+            {REELS.slice(0, 4).map((r, i) => (
               <Reveal key={r.id} delay={i * 0.08}>
                 <ReelCard reel={r} />
               </Reveal>

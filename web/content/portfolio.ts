@@ -20,6 +20,14 @@ export const REELS: Reel[] = [
     tratamiento: ["Color", "Limpieza de ruido", "Nivelación de audio", "Subtítulos", "Zooms de énfasis", "SFX", "Placa final de marca", "Bloopers"],
   },
   {
+    id: "maxikiosco-ositos",
+    titulo: "Maxikiosco La 21 · Halloween",
+    bajada: "Lo graba la dueña con el celular y yo lo edito.",
+    src: "/videos/maxikiosco-ositos.mp4",
+    poster: "/videos/maxikiosco-ositos.jpg",
+    tratamiento: ["Títulos animados", "Subtítulos", "Gráficos de Halloween", "Placa final de marca"],
+  },
+  {
     id: "kiosco",
     titulo: "El kiosco",
     bajada: "La historia del kiosco, hablada a cámara.",
