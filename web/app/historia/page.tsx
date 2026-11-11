@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
+import { og } from "@/content/og";
 import Image from "next/image";
 import { Button } from "@/components/Button";
+import { Pato } from "@/components/Pato";
 import { Reveal } from "@/components/Reveal";
+import { Timeline } from "@/components/Timeline";
 import { CAPITULOS, NOTA_LATZINA_URL, ORIGEN_NOMBRE } from "@/content/historia";
 import { WHATSAPP_DEFAULT } from "@/content/site";
 
@@ -10,6 +13,7 @@ export const metadata: Metadata = {
   description:
     "De una Spectrum a los 8 años a fundar DuckIA: cinturones, consolas, tatuajes, un kiosco y cuatro años enseñando a programar.",
   alternates: { canonical: "/historia" },
+  openGraph: og("/historia"),
 };
 
 export default function HistoriaPage() {
@@ -17,7 +21,7 @@ export default function HistoriaPage() {
     <>
       <section className="container-site pb-20 pt-36 sm:pt-44">
         <div className="grid items-end gap-12 md:grid-cols-[1.3fr_0.7fr]">
-          <Reveal>
+          <Reveal intro>
             <p className="kicker">Mi historia</p>
             <h1 className="mt-5 font-display text-[clamp(2.2rem,6vw,4.4rem)] font-bold leading-[1.04] tracking-[-0.02em]">
               Siempre emprendí. <span className="text-gold">Siempre volví a la tecnología.</span>
@@ -27,7 +31,7 @@ export default function HistoriaPage() {
               míos. Esta es la historia completa.
             </p>
           </Reveal>
-          <Reveal delay={0.1}>
+          <Reveal intro delay={0.1}>
             <div className="cut-corner relative aspect-[4/5] overflow-hidden bg-raised">
               <Image
                 src="/img/founder.jpg"
@@ -42,8 +46,9 @@ export default function HistoriaPage() {
         </div>
       </section>
 
-      <section className="container-site pb-24">
-        <ol className="relative border-l border-line">
+      <section className="paper py-24">
+        <div className="container-site">
+        <Timeline>
           {CAPITULOS.map((c) => (
             <Reveal as="li" key={c.titulo} className="relative pb-16 pl-8 sm:pl-14">
               <span
@@ -110,10 +115,11 @@ export default function HistoriaPage() {
               </div>
             </Reveal>
           ))}
-        </ol>
+        </Timeline>
+        </div>
       </section>
 
-      <section className="border-t border-line bg-raised py-24 sm:py-32">
+      <section className="bg-raised py-24 sm:py-32">
         <div className="container-site grid gap-12 md:grid-cols-[0.8fr_1.2fr]">
           <Reveal>
             <p className="kicker">Por qué DuckIA</p>
@@ -129,8 +135,10 @@ export default function HistoriaPage() {
         </div>
       </section>
 
-      <section className="container-site py-28 text-center">
+      <section className="paper py-28 text-center">
+        <div className="container-site">
         <Reveal>
+          <Pato nombre="saluda" size={170} className="mb-2 flex justify-center" />
           <p className="mx-auto max-w-[22ch] font-display text-[clamp(1.7rem,3.4vw,2.7rem)] font-semibold leading-[1.15]">
             Ahora quiero ayudar <span className="text-gold">a tu negocio</span>.
           </p>
@@ -141,6 +149,7 @@ export default function HistoriaPage() {
             <Button href="/servicios">Ver servicios</Button>
           </div>
         </Reveal>
+        </div>
       </section>
     </>
   );

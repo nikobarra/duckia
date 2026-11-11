@@ -4,12 +4,15 @@ import { useEffect, useRef } from "react";
 import { Button } from "./Button";
 import { WHATSAPP_DEFAULT } from "@/content/site";
 
+const SHIFT = 24;
+
 export function HeroFold() {
   const sectionRef = useRef<HTMLElement>(null);
   const landscapeRef = useRef<HTMLVideoElement>(null);
   const portraitRef = useRef<HTMLVideoElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const cueRef = useRef<HTMLDivElement>(null);
+  const endRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -41,8 +44,19 @@ export function HeroFold() {
           active.currentTime = t;
         } catch {}
       }
-      const p = Math.min(progress / 0.6, 1);
+      // El texto se va en el primer tercio, antes de que el pato tome forma.
+      const p = Math.min(progress / 0.18, 1);
       const eased = p * p * (3 - 2 * p);
+      // En escritorio el papel arranca corrido a la derecha, al lado del título, y vuelve al centro mientras se pliega.
+      const c = Math.min(progress / 0.45, 1);
+      landscape.style.transform = `translateX(${(1 - c * c * (3 - 2 * c)) * SHIFT}%)`;
+      if (endRef.current) {
+        const e = Math.min(Math.max((progress - 0.8) / 0.14, 0), 1);
+        endRef.current.style.opacity = String(e);
+        endRef.current.style.transform = `translateY(${(1 - e) * 24}px)`;
+        endRef.current.style.pointerEvents = e > 0.6 ? "auto" : "none";
+        endRef.current.style.visibility = e > 0 ? "visible" : "hidden";
+      }
       if (contentRef.current) {
         contentRef.current.style.transform = `translateY(${-eased * 90}px)`;
         contentRef.current.style.opacity = String(1 - eased);
@@ -95,6 +109,7 @@ export function HeroFold() {
         <video
           ref={landscapeRef}
           className="absolute inset-0 hidden h-full w-full object-cover sm:block"
+          style={{ transform: `translateX(${SHIFT}%)` }}
           src="/video/pliegue-16-9.mp4"
           poster="/img/hero-poster-16-9.jpg"
           muted
@@ -130,6 +145,18 @@ export function HeroFold() {
               Ver trabajos
             </Button>
           </div>
+        </div>
+
+        <div
+          ref={endRef}
+          className="pointer-events-none absolute inset-x-0 bottom-[5vh] flex flex-col items-center justify-center gap-4 px-6 sm:flex-row sm:gap-8 text-center opacity-0 invisible"
+        >
+          <p className="font-display text-[clamp(1.3rem,2.6vw,2rem)] font-semibold tracking-[-0.01em]">
+            Ideas que <span className="text-gold">funcionan</span>.
+          </p>
+          <Button href={WHATSAPP_DEFAULT} variant="solid">
+            Escribime por WhatsApp
+          </Button>
         </div>
 
         <div

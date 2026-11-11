@@ -81,11 +81,26 @@ body {
   right: 0;
   border-top: 34px solid var(--color-gold-dim);
   border-left: 34px solid transparent;
-  transition: border-color 0.3s var(--ease-fold);
+  transform-origin: top right;
+  /* --fold lo anima Reveal de 0 a 1: la esquina se pliega cuando la tarjeta entra en pantalla. */
+  transform: scale(var(--fold, 1));
+  transition: border-color 0.3s var(--ease-fold), transform 0.35s var(--ease-fold);
 }
 
 .fold-card:hover::after {
   border-top-color: var(--color-gold-bright);
+  transform: scale(1.4);
+}
+
+/* Grano de papel muy suave sobre todo el sitio. */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 45;
+  pointer-events: none;
+  opacity: 0.055;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.9 0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 .cut-corner {
@@ -96,18 +111,27 @@ body {
   filter: url(#duotone-gold);
 }
 
-.marquee-track {
-  animation: marquee 38s linear infinite;
+.intro-rise {
+  animation: intro-rise 0.6s var(--ease-fold) both;
 }
 
-@keyframes marquee {
-  to {
-    transform: translateX(-50%);
+@keyframes intro-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
   }
 }
 
+.reel-row {
+  scrollbar-width: none;
+}
+
+.reel-row::-webkit-scrollbar {
+  display: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .marquee-track {
+  .intro-rise {
     animation: none;
   }
 }
@@ -123,4 +147,86 @@ html.lenis body {
 
 .lenis.lenis-stopped {
   overflow: hidden;
+}
+
+/* ---------- Secciones en papel (versión «taller», alternadas con las oscuras) ---------- */
+.paper {
+  --color-bg: #efe7d6;
+  --color-raised: #fbf7ec;
+  --color-raised-2: #fffdf6;
+  --color-ink: #1a1712;
+  --color-ink-dim: rgba(26, 23, 18, 0.74);
+  --color-ink-faint: rgba(26, 23, 18, 0.5);
+  --color-line: rgba(26, 23, 18, 0.18);
+  /* Sobre papel, lo que en oscuro es dorado (textos, bordes, líneas) pasa a tinta; el amarillo queda para rellenos. */
+  --color-gold: #1a1712;
+  --color-gold-bright: #000;
+  --color-gold-dim: rgba(26, 23, 18, 0.3);
+  --pato: #ffd21f;
+  position: relative;
+  color: var(--color-ink);
+  background-color: var(--color-bg);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.09 0 0 0 0 0.07 0 0 0 0.22 0'/%3E%3C/filter%3E%3Crect width='260' height='260' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Lo destacado de los títulos va con trazo de marcador amarillo en vez de texto dorado. */
+.paper .font-display .text-gold {
+  background: linear-gradient(to top, transparent 6%, var(--pato) 6%, var(--pato) 40%, transparent 40%);
+}
+
+.paper a.text-gold {
+  text-decoration: underline;
+  text-decoration-color: var(--pato);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 3px;
+}
+
+.paper [data-btn="solid"] {
+  background: var(--pato);
+  color: #1a1712;
+  box-shadow: inset 0 0 0 1.5px #1a1712;
+}
+
+.paper [data-btn="solid"]:hover {
+  background: #ffe680;
+}
+
+.paper [data-btn="primary"] {
+  border-color: #1a1712;
+  background: transparent;
+  color: #1a1712;
+}
+
+.paper [data-btn="primary"]:hover {
+  background: var(--pato);
+}
+
+/* Hoja apoyada sobre el papel, con su cinta. */
+.sheet {
+  box-shadow: 0 1px 0 rgba(26, 23, 18, 0.08), 0 22px 30px -22px rgba(26, 23, 18, 0.55);
+  transition: rotate 0.3s var(--ease-fold), translate 0.3s var(--ease-fold);
+}
+
+.sheet:hover {
+  rotate: 0deg !important;
+  translate: 0 -4px;
+}
+
+.tape {
+  position: absolute;
+  top: -0.75rem;
+  left: 50%;
+  width: 6rem;
+  height: 1.5rem;
+  translate: -50% 0;
+  rotate: -2deg;
+  background: var(--pato);
+  opacity: 0.85;
+  box-shadow: 0 1px 2px rgba(26, 23, 18, 0.18);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sheet {
+    transition: none;
+  }
 }

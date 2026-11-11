@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { og } from "@/content/og";
 import Image from "next/image";
 import { Button } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
@@ -11,7 +12,9 @@ export const metadata: Metadata = {
   description:
     "Guía de marketing digital para negocios chicos en Argentina: 13 capítulos y 4 casos reales. Capítulo 1 gratis.",
   alternates: { canonical: "/libro" },
-  openGraph: { images: [{ url: "/libro/og-libro.jpg", width: 1200, height: 630 }] },
+  openGraph: og("/libro", {
+    images: [{ url: "/libro/og-libro.jpg", width: 1200, height: 630, type: "image/jpeg", alt: "Sistema, no timba, el libro de DuckIA" }],
+  }),
 };
 
 export const revalidate = 3600;
@@ -40,7 +43,7 @@ export default function LibroPage() {
     <>
       <section className="container-site pb-20 pt-36 sm:pt-44">
         <div className="grid items-center gap-12 md:grid-cols-[1.1fr_0.9fr]">
-          <Reveal>
+          <Reveal intro>
             <p className="kicker">{LIBRO.kicker}</p>
             <h1 className="mt-5 font-display text-[clamp(2.4rem,7vw,5rem)] font-bold leading-[1.02] tracking-[-0.02em]">
               Sistema, <span className="text-gold">no timba</span>.
@@ -59,7 +62,7 @@ export default function LibroPage() {
               </p>
             )}
           </Reveal>
-          <Reveal delay={0.1}>
+          <Reveal intro delay={0.1}>
             <div className="cut-corner relative aspect-[1200/630] overflow-hidden border border-line">
               <Image src="/libro/og-libro.jpg" alt="Sistema, no timba" fill priority sizes="(min-width: 768px) 45vw, 100vw" className="object-cover" />
             </div>

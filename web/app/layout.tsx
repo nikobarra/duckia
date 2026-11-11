@@ -4,6 +4,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SmoothScroll } from "@/components/SmoothScroll";
+import { og, OG_IMAGE } from "@/content/og";
 import { EMAIL, SITE_URL, SOCIAL, WHATSAPP_DISPLAY } from "@/content/site";
 import { hanken, martian, unbounded } from "./fonts";
 import "./globals.css";
@@ -16,20 +17,7 @@ export const metadata: Metadata = {
   },
   description:
     "Grabación y edición de Reels, gestión de redes y desarrollo web para comercios. Presencial en Balcarce, Mar del Plata, Tandil, Necochea y Miramar; virtual para todo el mundo.",
-  openGraph: {
-    type: "website",
-    locale: "es_AR",
-    siteName: "DuckIA",
-    images: [
-      {
-        url: "/img/og-duckia.jpg",
-        width: 1200,
-        height: 630,
-        type: "image/jpeg",
-        alt: "DuckIA: contenido, video y web para negocios",
-      },
-    ],
-  },
+  openGraph: og("/"),
   twitter: { card: "summary_large_image" },
   alternates: { canonical: "/" },
 };
@@ -44,7 +32,7 @@ const jsonLd = {
   "@type": "ProfessionalService",
   name: "DuckIA",
   url: SITE_URL,
-  image: `${SITE_URL}/img/og-duckia.jpg`,
+  image: `${SITE_URL}${OG_IMAGE.url}`,
   email: EMAIL,
   telephone: WHATSAPP_DISPLAY,
   founder: { "@type": "Person", name: "Nicolás Barra", url: SOCIAL.dev },

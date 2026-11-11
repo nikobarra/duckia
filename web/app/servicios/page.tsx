@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { og } from "@/content/og";
 import { Button } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
 import { SectionHead } from "@/components/SectionHead";
@@ -10,13 +11,14 @@ export const metadata: Metadata = {
   description:
     "Grabación de Reels y videos largos, edición de video y sonido, gestión de redes, desarrollo web y diseño para negocios.",
   alternates: { canonical: "/servicios" },
+  openGraph: og("/servicios"),
 };
 
 export default function ServiciosPage() {
   return (
     <>
       <section className="container-site pb-16 pt-36 sm:pt-44">
-        <Reveal>
+        <Reveal intro>
           <p className="kicker">Servicios</p>
           <h1 className="mt-5 max-w-[18ch] font-display text-[clamp(2.2rem,6vw,4.4rem)] font-bold leading-[1.04] tracking-[-0.02em]">
             Hecho a la medida <span className="text-gold">de tu negocio</span>.
@@ -28,8 +30,8 @@ export default function ServiciosPage() {
         </Reveal>
       </section>
 
-      <section className="container-site pb-24">
-        <div className="border-t border-line">
+      <section className="paper py-20 sm:py-24">
+        <div className="container-site border-t border-line">
           {SERVICIOS.map((s) => (
             <Reveal
               key={s.id}
@@ -63,7 +65,7 @@ export default function ServiciosPage() {
         </div>
       </section>
 
-      <section className="border-t border-line bg-raised py-24 sm:py-32">
+      <section className="bg-raised py-24 sm:py-32">
         <div className="container-site">
           <SectionHead kicker="Cómo trabajamos" title="Cuatro pasos, sin vueltas" />
           <ol className="mt-14 grid gap-px border border-line bg-line md:grid-cols-4">
@@ -83,6 +85,7 @@ export default function ServiciosPage() {
         </div>
       </section>
 
+      <div className="paper">
       <section className="container-site grid gap-px py-24 sm:py-32 md:grid-cols-2">
         <Reveal className="border border-line p-8 sm:p-10">
           <p className="kicker">Presencial</p>
@@ -106,6 +109,7 @@ export default function ServiciosPage() {
           </div>
         </Reveal>
       </section>
+      </div>
     </>
   );
 }

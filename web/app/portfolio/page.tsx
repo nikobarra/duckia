@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import { og } from "@/content/og";
 import { Arrow, Button } from "@/components/Button";
 import { ChannelCard } from "@/components/ChannelCard";
-import { ReelCard } from "@/components/ReelCard";
+import { ReelRow } from "@/components/ReelRow";
 import { Reveal } from "@/components/Reveal";
 import { SectionHead } from "@/components/SectionHead";
 import { CANALES, REELS } from "@/content/portfolio";
@@ -11,13 +12,14 @@ export const metadata: Metadata = {
   title: "Portfolio",
   description: "Reels, videos y trabajos de edición de DuckIA.",
   alternates: { canonical: "/portfolio" },
+  openGraph: og("/portfolio"),
 };
 
 export default function PortfolioPage() {
   return (
     <>
       <section className="container-site pb-16 pt-36 sm:pt-44">
-        <Reveal>
+        <Reveal intro>
           <p className="kicker">Portfolio</p>
           <h1 className="mt-5 max-w-[16ch] font-display text-[clamp(2.2rem,6vw,4.4rem)] font-bold leading-[1.04] tracking-[-0.02em]">
             Mirá lo que <span className="text-gold">hago</span>.
@@ -30,13 +32,7 @@ export default function PortfolioPage() {
       </section>
 
       <section className="container-site pb-24">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-          {REELS.map((r, i) => (
-            <Reveal key={r.id} delay={i * 0.08}>
-              <ReelCard reel={r} />
-            </Reveal>
-          ))}
-        </div>
+        <ReelRow reels={REELS} cols={3} />
       </section>
 
       <section className="border-t border-line py-24 sm:py-32">
