@@ -21,10 +21,11 @@ export const SOCIAL = {
 };
 
 export const NAV = [
-  { href: "/servicios", label: "Servicios" },
+  { href: "/edicion-de-video", label: "Edición" },
+  { href: "/desarrollo-web", label: "Webs" },
   { href: "/portfolio", label: "Portfolio" },
   { href: "/historia", label: "Historia" },
-  { href: "/libro", label: "Libro" },
+
 ];
 
 export const ZONAS = ["Balcarce", "Mar del Plata", "Tandil", "Necochea", "Miramar"];

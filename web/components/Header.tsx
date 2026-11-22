@@ -4,8 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { NAV, SOCIAL, WHATSAPP_DEFAULT } from "@/content/site";
-import { Arrow } from "./Button";
+import { NAV, WHATSAPP_DEFAULT } from "@/content/site";
 
 export function Header() {
   const pathname = usePathname();
@@ -52,14 +51,6 @@ export function Header() {
             );
           })}
           <a
-            href={SOCIAL.dev}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 font-mono text-[0.72rem] uppercase tracking-[0.14em] text-ink-dim transition-colors hover:text-gold"
-          >
-            Desarrollo web <Arrow />
-          </a>
-          <a
             href={WHATSAPP_DEFAULT}
             target="_blank"
             rel="noopener noreferrer"
@@ -104,14 +95,6 @@ export function Header() {
               {item.label}
             </Link>
           ))}
-          <a
-            href={SOCIAL.dev}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 border-b border-line py-4 font-display text-2xl font-semibold"
-          >
-            Desarrollo web <Arrow />
-          </a>
           <a
             href={WHATSAPP_DEFAULT}
             target="_blank"

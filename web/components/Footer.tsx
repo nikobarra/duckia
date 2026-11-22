@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { EMAIL, NAV, SOCIAL, WHATSAPP_DEFAULT, WHATSAPP_DISPLAY, ZONAS } from "@/content/site";
+import { EMAIL, NAV, SOCIAL, WHATSAPP_DEFAULT, WHATSAPP_DISPLAY } from "@/content/site";
 
 export function Footer() {
   return (
@@ -12,8 +12,7 @@ export function Footer() {
             <span className="font-display text-lg font-semibold">DuckIA</span>
           </Link>
           <p className="mt-4 max-w-[32ch] text-sm text-ink-dim">
-            Contenido, video y web para negocios. Con base en Balcarce, presencial en la zona y
-            virtual para todo el mundo.
+            Edición de video y desarrollo web para negocios. Atención directa y trabajo remoto desde Balcarce.
           </p>
         </div>
 
@@ -63,8 +62,8 @@ export function Footer() {
         </div>
 
         <div>
-          <p className="kicker mb-4">Presencial</p>
-          <p className="text-sm text-ink-dim">{ZONAS.join(" · ")}</p>
+          <p className="kicker mb-4">Trabajemos juntos</p>
+          <p className="text-sm text-ink-dim">Online para todo el país. Encuentros presenciales a coordinar.</p>
         </div>
       </div>
 

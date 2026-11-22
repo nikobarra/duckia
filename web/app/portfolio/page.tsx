@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import { og } from "@/content/og";
-import { Arrow, Button } from "@/components/Button";
 import { ChannelCard } from "@/components/ChannelCard";
 import { ReelRow } from "@/components/ReelRow";
 import { Reveal } from "@/components/Reveal";
 import { SectionHead } from "@/components/SectionHead";
 import { CANALES, REELS } from "@/content/portfolio";
-import { SOCIAL } from "@/content/site";
+import { WebShowcase } from "@/components/WebShowcase";
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -48,21 +47,7 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      <section className="border-t border-line bg-raised py-24">
-        <div className="container-site flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
-          <Reveal>
-            <p className="kicker">Desarrollo web</p>
-            <p className="mt-4 max-w-[22ch] font-display text-[clamp(1.7rem,3.4vw,2.7rem)] font-semibold leading-[1.15]">
-              Los proyectos web están en mi portfolio de desarrollador
-            </p>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <Button href={SOCIAL.dev}>
-              nicolasbarra.dev <Arrow />
-            </Button>
-          </Reveal>
-        </div>
-      </section>
+      <WebShowcase />
     </>
   );
 }

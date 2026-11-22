@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     template: "%s · DuckIA",
   },
   description:
-    "Grabación y edición de Reels, gestión de redes y desarrollo web para comercios. Presencial en Balcarce, Mar del Plata, Tandil, Necochea y Miramar; virtual para todo el mundo.",
+    "Edición remota de reels y desarrollo web para negocios y profesionales. Tu identidad, atención directa y proyectos reales. Desde Balcarce para todo el país.",
   openGraph: og("/"),
   twitter: { card: "summary_large_image" },
   alternates: { canonical: "/" },
