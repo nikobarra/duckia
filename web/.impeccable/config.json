@@ -1,0 +1,42 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "app/globals.css"
+        ],
+        "createdAt": "2026-10-26T15:06:35.884Z",
+        "reason": "Claude: .kicker::before es un triángulo CSS de 0x0 (truco de bordes), no un borde lateral de tarjeta; archivo no tocado en este cambio"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "0.95rem app/globals.css claude: valor de la sección de proyectos web del rediseño (sesión de codex); decisión de nicolás del 22/11 de dejarlo como está",
+        "createdAt": "2026-11-22T16:31:25.009Z"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "8px app/globals.css claude: valor de la sección de proyectos web del rediseño (sesión de codex); decisión de nicolás del 22/11 de dejarlo como está",
+        "createdAt": "2026-11-22T16:31:25.181Z"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "0.9rem app/globals.css claude: valor de la sección de proyectos web del rediseño (sesión de codex); decisión de nicolás del 22/11 de dejarlo como está",
+        "createdAt": "2026-11-22T16:31:25.324Z"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "1.15rem app/globals.css claude: valor de la sección de proyectos web del rediseño (sesión de codex); decisión de nicolás del 22/11 de dejarlo como está",
+        "createdAt": "2026-11-22T16:31:25.460Z"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "16px app/globals.css claude: valor de la sección de proyectos web del rediseño (sesión de codex); decisión de nicolás del 22/11 de dejarlo como está",
+        "createdAt": "2026-11-22T16:31:25.663Z"
+      }
+    ]
+  }
+}
